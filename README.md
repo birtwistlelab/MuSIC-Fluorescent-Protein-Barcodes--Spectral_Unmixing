@@ -5,9 +5,9 @@ Assuming Pythonis installed, run the following command to install all necessary 
 pip install -r requirements.txt
 ```
 ## **Usage**
-All original files and the result files were available upon request due to size limitations.
+All result files were available upon request due to size limitations.
 
-To use the project, you can use the run_all.py file in the terminal using
+To use the project, you can use the run_all.py file in the terminal by executing the following command:
 
 ```
 python run_all.py
