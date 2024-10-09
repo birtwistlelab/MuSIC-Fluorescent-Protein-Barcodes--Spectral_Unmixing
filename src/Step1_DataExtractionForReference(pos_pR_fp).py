@@ -6,7 +6,9 @@ import os
 import glob
 from my_module import get_str
 
-project_root = os.path.dirname(os.path.abspath(__file__))
+current_path = os.path.dirname(os.path.abspath(__file__))
+print(current_path)
+project_root = os.path.dirname(current_path)
 print(project_root)
 
 result_path = os.path.join(project_root, 'output/')
