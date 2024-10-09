@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.metrics import auc
 import matplotlib.pyplot as plt
 import os
+
 plt.rcParams['font.family'] = 'DejaVu Sans'
 project_root = os.path.dirname(os.path.abspath(__file__))
 result_path = os.path.join(project_root, 'output/')
@@ -14,7 +15,7 @@ x_axis = np.load(result_path + '1.x_axis_channel.npy')
 channel_num = len(x_axis)
 print(RF_name)
 
-pos_pR_fp_scale_x = np.load('output/5.pos_pR_fp_scale_x.npy', allow_pickle=True).item()
+pos_pR_fp_scale_x = np.load(result_path + '5.pos_pR_fp_scale_x.npy', allow_pickle=True).item()
 
 thresholds_1 = np.arange(0, 1, 0.01)
 thresholds_2 = np.arange(1, 10, 0.1)
@@ -70,7 +71,7 @@ for key, val in pos_pR_fp_scale_x.items():
     plt.ylim([-0.01, 1.05])
     plt.legend(loc='lower right')
 
-    file_path = 'output/6.unmixing_pos_ROC/'
+    file_path = result_path + '6.unmixing_pos_ROC/'
     os.makedirs(file_path, exist_ok=True)
     filename = key + '_ROC.png'
     plt.savefig(file_path + filename)
@@ -93,7 +94,7 @@ plt.xlim([-0.01, 1.05])
 plt.ylim([-0.01, 1.05])
 plt.legend(loc='lower right')
 
-file_path2 = 'output/6.unmixing_pos_ROC_summary/'
+file_path2 = result_path + '6.unmixing_pos_ROC_summary/'
 os.makedirs(file_path2, exist_ok=True)
 filename2 = 'All_Plasmids_ROCs.png'
 plt.savefig(file_path2 + filename2, transparent=True)
@@ -137,5 +138,5 @@ filename3 = 'Summary_of_Plasmids_ROC(3x6).png'
 plt.savefig(file_path2 + filename3)
 plt.close()
 
-np.save('output/6.result_dict_for_ROC.npy', result_dict, allow_pickle=True)  # key: [fpr, tpr]
-np.save('output/6.auc_dict_for_ROC.npy', auc_dict, allow_pickle=True)
+np.save(result_path + '6.result_dict_for_ROC.npy', result_dict, allow_pickle=True)  # key: [fpr, tpr]
+np.save(result_path + '6.auc_dict_for_ROC.npy', auc_dict, allow_pickle=True)
