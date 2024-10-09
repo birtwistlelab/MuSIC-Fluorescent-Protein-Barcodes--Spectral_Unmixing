@@ -67,15 +67,15 @@ for key in condition4_all_pos_pMuSIC_scale_x.keys():
         if each == name:
             problematic_pMuSICs_x_scale_dict[key] = condition4_all_pos_pMuSIC_scale_x[key]
 
-probelmatic_pMuSICs_dict = {}
+problematic_pMuSICs_dict = {}
 for key in condition4_pos_pMuSIC.keys():
     for each in problematic_pMuSICs_list:
         match = re.match(r"(S\d+)_", key)
         if match:
             name = match.group(1)
         if each == name:
-            probelmatic_pMuSICs_dict[key] = condition4_pos_pMuSIC[key]
-print(probelmatic_pMuSICs_dict.keys())
+            problematic_pMuSICs_dict[key] = condition4_pos_pMuSIC[key]
+print(problematic_pMuSICs_dict.keys())
 
 pMuSIC_combination_dict = {}
 pMuSIC_combination_mfi_dict ={}
@@ -138,7 +138,7 @@ for key, value in problematic_pMuSICs_x_scale_dict.items():
         # values across 48 channels
         cell_FI_list = []
         for each_ind in cell_index:
-            cell_FI = probelmatic_pMuSICs_dict[key][each_ind]
+            cell_FI = problematic_pMuSICs_dict[key][each_ind]
             cell_FI_list.append(cell_FI)
 
         # here we got a cell array for each category with a shape (cell_number, 48)
@@ -198,7 +198,7 @@ for key1, val1 in ideal_pMuSICs_dict.items():
     normalized_sample1_MFI = val1/max_val1
 
     sample2_replicate = {}
-    for key2, val2 in probelmatic_pMuSICs_dict.items():
+    for key2, val2 in problematic_pMuSICs_dict.items():
         sample2 = extract_common_identifier(key2)
         if sample1 == sample2:
             pure_FI = val2 - RF_autoFI
