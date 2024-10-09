@@ -8,7 +8,8 @@ from matplotlib.ticker import FuncFormatter
 from my_module import scientific_formatter
 plt.rcParams['font.family'] = 'DejaVu Sans'
 
-project_root = os.path.dirname(os.path.abspath(__file__))
+current_path = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_path)
 result_path = os.path.join(project_root, 'output/')
 
 pR_fp_singlets = np.load(result_path + '3.pR_fp_singlets.npy', allow_pickle=True).item()
