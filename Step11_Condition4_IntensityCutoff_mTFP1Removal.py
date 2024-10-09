@@ -80,7 +80,7 @@ sns.heatmap(df, annot=False, cmap='Blues', mask=df.isnull(), cbar=True, linecolo
 
 ax.set_aspect('equal')
 for i in range(len(df)):
-    ax.add_patch(plt.Rectangle((i + 0.05, i + 0.05), 0.9, 0.9, fill=True, color='gray', alpha=0.5, edgecolor='white', lw=1))
+    ax.add_patch(plt.Rectangle((i + 0.05, i + 0.05), 0.9, 0.9, fill=True, facecolor='gray', alpha=0.5, edgecolor='white', lw=1))
 
 colorbar = ax.collections[0].colorbar
 colorbar.ax.tick_params(labelsize=18)
