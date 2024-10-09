@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 import os
 
 plt.rcParams['font.family'] = 'DejaVu Sans'
-project_root = os.path.dirname(os.path.abspath(__file__))
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_path)
 result_path = os.path.join(project_root, 'output/')
 
 RF_name = np.load(result_path + '2.RF_name.npy')
