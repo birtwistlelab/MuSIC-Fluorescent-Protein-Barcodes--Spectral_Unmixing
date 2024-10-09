@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 plt.rcParams['font.family'] = 'DejaVu Sans'
-project_root = os.path.dirname(os.path.abspath(__file__))
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_path)
 result_path = os.path.join(project_root, 'output/')
 
 excel_path = 'Normalized_spectral_data_of_each_reference_CYTEK/Spectrum for Fig.2S.xlsx'
