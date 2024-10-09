@@ -9,7 +9,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 plt.rcParams['font.family'] = 'DejaVu Sans'
-project_root = os.path.dirname(os.path.abspath(__file__))
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_path)
 result_path = os.path.join(project_root, 'output/')
 
 excel_path = result_path + '14.pMuSICs_condition4_unmixing/excel_summary/14.all_pos_pMuSIC_list_136combos.xlsx'
