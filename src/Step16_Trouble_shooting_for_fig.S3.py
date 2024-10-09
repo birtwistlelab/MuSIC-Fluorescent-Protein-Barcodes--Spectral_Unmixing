@@ -7,7 +7,9 @@ import pandas as pd
 from my_module import print_lower_triangular_list, find_combination_index
 
 plt.rcParams['font.family'] = 'DejaVu Sans'
-project_root = os.path.dirname(os.path.abspath(__file__))
+
+current_path = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_path)
 result_path = os.path.join(project_root, 'output/')
 
 condition4_pos_pMuSIC = np.load(result_path + '14.condition4_remove_mTFP1_FI_cutoff_all_pos_pMuSICs_dict.npy',
