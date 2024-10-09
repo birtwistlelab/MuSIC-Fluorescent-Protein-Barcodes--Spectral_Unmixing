@@ -7,10 +7,13 @@ import glob
 from my_module import get_str
 
 project_root = os.path.dirname(os.path.abspath(__file__))
-result_path = os.path.join(project_root, 'output/')
-fig_path = os.path.join(project_root, 'paper_fig/')
-os.makedirs(result_path, exist_ok=True)
 print(project_root)
+
+result_path = os.path.join(project_root, 'output/')
+os.makedirs(result_path, exist_ok=True)
+
+fig_path = os.path.join(project_root, 'paper_fig/')
+os.makedirs(fig_path, exist_ok=True)
 
 path = os.path.join(project_root, 'csv_files/pos_pR_fp/')
 print(path)
