@@ -1,5 +1,15 @@
 import os
 import traceback
+import numpy as np
+import pandas as pd
+import glob
+import re
+import statistics
+from sklearn.metrics import auc
+from scipy.optimize import nnls
+import matplotlib.pyplot as plt
+import my_module
+import seaborn as sns
 
 step_files = [
     "my_module.py",
@@ -28,14 +38,11 @@ step_files = [
 
 
 def run_all_steps():
-    global_namespace = globals()
-    local_namespace = {}
-    global_namespace['np'] = __import__('numpy')
     for step in step_files:
         try:
             print(f"Running {step}...")
             with open(step) as file:
-                exec(file.read(), global_namespace, local_namespace)
+                exec(file.read())
             print(f"{step} completed.\n")
         except Exception as e:
             print(f"Error while running {step}: {e}")
