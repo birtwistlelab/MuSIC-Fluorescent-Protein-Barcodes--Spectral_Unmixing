@@ -9,7 +9,7 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_path)
 result_path = os.path.join(project_root, 'output/')
 
-excel_path = 'Normalized_spectral_data_of_each_reference_CYTEK/Spectrum for Fig.2S.xlsx'
+excel_path = project_root + '/Normalized_spectral_data_of_each_reference_CYTEK/Spectrum for Fig.2S.xlsx'
 data = pd.read_excel(excel_path)
 data['Name'] = data['Name'].astype(str)
 
