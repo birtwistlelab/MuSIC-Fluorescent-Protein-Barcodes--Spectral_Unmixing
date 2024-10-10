@@ -71,7 +71,6 @@ plt.tight_layout()
 fig_path = os.path.join(project_root, 'paper_fig/')
 filename = 'Fig.S2(Step17).png'
 plt.savefig(fig_path + filename, transparent=True)
-plt.close()
 
 folder_path1 = result_path + '17.Reference_spectrum_for_fig.S2/'
 os.makedirs(folder_path1, exist_ok=True)
