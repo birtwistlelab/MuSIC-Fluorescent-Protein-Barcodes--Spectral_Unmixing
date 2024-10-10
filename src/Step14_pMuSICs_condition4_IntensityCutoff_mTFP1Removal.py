@@ -20,7 +20,7 @@ from scipy.optimize import nnls
 import matplotlib.pyplot as plt
 import os
 from my_module import print_lower_triangular_list, find_combination_index
-import seaborn as sns
+
 
 plt.rcParams['font.family'] = 'DejaVu Sans'
 
@@ -76,7 +76,7 @@ for key in all_pos_pMuSICs.keys():
 # now we have the full pMuSIC dict that doesn't contain any mTFP1
 # b. unmixing using the 17 fp reference + auto_fluorescence and only take the last 17 scale_x for each reference
 fp_name_remove_mTFP1 = ["01.EBFP2", "02.mTagBFP2", "03.mT-Sapphire", "04.mAmetrine", "05.mCerulean3", "06.LSSmOrange",
-                        "07.mBeRFP","09.EGFP", "10.CyOFP1", "11.mClover3", "12.mVenus", "13.mPapaya", "14.mOrange2",
+                        "07.mBeRFP", "09.EGFP", "10.CyOFP1", "11.mClover3", "12.mVenus", "13.mPapaya", "14.mOrange2",
                         "15.mRuby3", "16.mKate2", "17.mCardinal", "18.miRFP670"]
 
 # to match the name of each fp in RF_peak_remove_mTFP1 to the fp_name_remove_mTFP1
@@ -136,6 +136,16 @@ ctrl_array = np.array([(x, y) for x, y in ctrl_list], dtype=object)
 
 
 def create_triangle_heatmap(data_list, name):
+
+    import numpy as np
+    import pandas as pd
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+
+    current_path1 = os.path.dirname(os.path.abspath(__file__))
+    project_root1 = os.path.dirname(current_path1)
+    result_path1 = os.path.join(project_root1, 'output/')
+
     fp_name = ["EBFP2", "mTagBFP2", "mT-Sapphire", "mAmetrine", "mCerulean3", "LSSmOrange", "mBeRFP", "EGFP", "CyOFP1",
                "mClover3", "mVenus", "mPapaya", "mOrange2", "mRuby3", "mKate2", "mCardinal", "miRFP670"]
     n = 17  # Matrix size
@@ -166,10 +176,10 @@ def create_triangle_heatmap(data_list, name):
         plt.gca().add_patch(plt.Rectangle((i, i), 1, 1, fill=True, facecolor='lightgray', edgecolor='gray'))
 
     plt.subplots_adjust(bottom=0.18)
-    file_path1 = result_path + '14.pMuSICs_condition4_unmixing/triangular_matrix_for_each_fp/'
-    os.makedirs(file_path1, exist_ok=True)
+    file_path = result_path1 + '14.pMuSICs_condition4_unmixing/triangular_matrix_for_each_fp/'
+    os.makedirs(file_path, exist_ok=True)
     filename1 = name + '.png'
-    plt.savefig(file_path1 + filename1)
+    plt.savefig(file_path + filename1)
     plt.close()
 
 
