@@ -1,4 +1,5 @@
 import os
+import traceback
 
 step_files = [
     "my_module.py",
@@ -27,14 +28,18 @@ step_files = [
 
 
 def run_all_steps():
+    global_namespace = globals()
+    local_namespace = {}
+    global_namespace['np'] = __import__('numpy')
     for step in step_files:
         try:
             print(f"Running {step}...")
             with open(step) as file:
-                exec(file.read())
+                exec(file.read(), global_namespace, local_namespace)
             print(f"{step} completed.\n")
         except Exception as e:
             print(f"Error while running {step}: {e}")
+            traceback.print_exc()
             break
 
 
