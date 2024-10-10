@@ -36,7 +36,7 @@ RF_remove_mTFP1 = np.load(result_path + '10_1.RF_17.npy')
 
 # a. remove all pMuSICs containing mTFP1 according to the sequencing result.
 # to extract the data from the summary list of sequencing result from PlasmidSaurus and set it as df_actual
-excel_path = 'summary_of_sequencing_results_PlasmidSaurus/summary of sequencing results of pMuSICs.xlsx'
+excel_path = project_root + 'summary_of_sequencing_results_PlasmidSaurus/summary of sequencing results of pMuSICs.xlsx'
 df_actual = pd.read_excel(excel_path, dtype={'fp_m': str, 'fp_n': str})
 
 # to filter out any pMuSICs containing mTFP1 in the summary of the sequencing result (actual pMuSIC)
