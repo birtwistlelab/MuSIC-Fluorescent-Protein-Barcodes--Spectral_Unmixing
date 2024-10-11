@@ -33,8 +33,8 @@ def run_all_steps():
         try:
             print(f"Running {step}...")
             module = importlib.import_module(step)
-
             print(f"{step} completed.\n")
+            
         except Exception as e:
             print(f"Error while running {step}: {e}")
             traceback.print_exc()
