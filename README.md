@@ -14,9 +14,11 @@ python run_all.py
 ```
 ### **Structure Tree**
 The structure tree below displays the original data and the corresponding resulting figures.
+
 ![structure tree](structure_tree.png)
 
 ### Code Flow
 Data analysis was carried out according to the code flow outlined below:
+
 ![Code flow](workflow_of_spectral_unmixing.png)
 
