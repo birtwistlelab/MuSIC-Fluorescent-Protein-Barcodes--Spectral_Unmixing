@@ -79,6 +79,7 @@ for i in range(1, 19):
     os.makedirs(file_path, exist_ok=True)
     filename = label + '.png'
     plt.savefig(file_path + filename, transparent=True)
+    plt.close()
 
 print(RF_peak)
 # output of RF_peak is : {'RF_fp01': array([2]), 'RF_fp02': array([2]), 'RF_fp03': array([4]), 'RF_fp04': array([6]),
