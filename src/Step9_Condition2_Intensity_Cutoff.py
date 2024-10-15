@@ -98,7 +98,7 @@ plt.subplots_adjust(bottom=0.4)
 file_path = result_path + '9.intensity_cutoff_condition2/'
 os.makedirs(file_path, exist_ok=True)
 
-filename = '9.heatmap of FPR (condition2: cutoff at 10^4).png'
+filename = '9.heatmap_of_FPR_condition2_cutoff.png'
 plt.savefig(file_path + filename, transparent=True)
 plt.close()
 
