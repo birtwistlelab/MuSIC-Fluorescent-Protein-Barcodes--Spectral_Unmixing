@@ -90,7 +90,7 @@ plt.subplots_adjust(bottom=0.4)
 
 file_path = result_path + '10.condition3_remove_mTFP1/10_3.remove_mTFP1_condition3_heatmap_fpr_17x17/'
 os.makedirs(file_path, exist_ok=True)
-filename = '10_3.heatmap of FPR (condition3:remove mTFP1).png'
+filename = '10_3.heatmap_of_FPR_condition3_remove_mTFP1.png'
 plt.savefig(file_path + filename, transparent=True)
 plt.close()
 
