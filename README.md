@@ -20,5 +20,5 @@ The structure tree below displays the original data and the corresponding result
 ### Code Flow
 Data analysis was carried out according to the code flow outlined below:
 
-![Code flow](workflow_of_spectral_unmixing.png)
+![Code flow](workflow.png)
 
