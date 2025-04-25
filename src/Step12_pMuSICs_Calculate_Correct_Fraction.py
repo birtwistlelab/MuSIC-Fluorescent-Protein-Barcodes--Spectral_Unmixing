@@ -259,7 +259,7 @@ filename1 = '12.fraction_triangle_matrix.png'
 plt.savefig(os.path.join(saving_path, filename1),dpi=300, transparent=True)
 
 fig_path = os.path.join(project_root, 'figures_for_paper/')
-filename2 = 'Fig4C(Step12)_fraction_triangle_martix.png'
+filename2 = 'Fig.4C(Step12)_fraction_triangle_martix.png'
 plt.savefig(os.path.join(fig_path, filename2), dpi=300, transparent=True)
 
 plt.close()
