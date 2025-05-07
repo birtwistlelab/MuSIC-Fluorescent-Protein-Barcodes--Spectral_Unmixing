@@ -17,7 +17,7 @@ optimal_thresholds = np.load(
     os.path.join(result_path, '6.DetermineUnmixingThresholdsOnTrainingCells_FigS4/average_optimal_threshold.npy'))
 thresholds = np.array(optimal_thresholds)
 
-loading_excel_path = [os.path.join(result_path, '9_1.RangeIntensityCutOff/', f'test{i + 1}/')
+loading_excel_path = [os.path.join(result_path, '9_1.RangeIntensityCutoff/', f'test{i + 1}/') ### JRH changed from 'CutOff' to 'Cutoff'.
                       for i in range(3)]
 
 saving_path = [os.path.join(result_path, '9_2.CalculationAtEachCutoff/', f'test{i + 1}/')

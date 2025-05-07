@@ -12,7 +12,7 @@ project_root = os.path.dirname(current_path)
 result_path = os.path.join(project_root, 'output/')
 
 loading_cell_path = [os.path.join(result_path, '4_2.SeparateTrainingAndTestingData/', f'test{i + 1}/') for i in range(3)]
-loading_excel_path = [os.path.join(result_path, '9_1.RangeIntensityCutOff/', f'test{i + 1}/')
+loading_excel_path = [os.path.join(result_path, '9_1.RangeIntensityCutoff/', f'test{i + 1}/') ### JRH Changed from 'CutOff' to 'Cutoff'
                       for i in range(3)]
 
 negative_thresholds = np.load(os.path.join(result_path, '4_1.negative_control_thresholds.npy'))
